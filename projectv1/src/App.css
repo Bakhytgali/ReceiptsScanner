@@ -1,0 +1,41 @@
+.app-header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #ff9800;
+}
+
+.content {
+  margin-top: 80px; /* Ensures content is not hidden under the fixed header */
+  width: 100%;
+  padding: 20px;
+}
