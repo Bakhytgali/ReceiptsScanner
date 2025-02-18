@@ -1,9 +1,15 @@
 import { useRef } from "react";
 import "./App.css";
 
-export default function CameraComponent() {
+export default function CameraComponent({ onImageSelect }) {
     const fileInputRef = useRef(null);
-    console.log("CameraComponent рендерится!");
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            onImageSelect(file);  // Передаём выбранное фото в `App.js`
+        }
+    };
 
     return (
         <div className="camera-container">
@@ -13,6 +19,7 @@ export default function CameraComponent() {
                 capture="environment"
                 ref={fileInputRef}
                 className="hidden-input"
+                onChange={handleFileChange}
             />
 
             <button
