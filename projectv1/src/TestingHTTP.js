@@ -9,13 +9,13 @@ function TestingHTTP({ selectedImage }) {
             return;
         }
 
-        const formData = new FormData();
-        formData.append("file", selectedImage);
-
         try {
-            const res = await fetch("https://reqres.in/api/users", {
+            const res = await fetch("http://localhost:3500/upload", {
                 method: "POST",
-                body: formData,
+                headers: {
+                    "Content-Type": "application/octet-stream", // Указываем бинарные данные
+                },
+                body: selectedImage, // Отправляем ByteArray
             });
 
             const data = await res.json();
